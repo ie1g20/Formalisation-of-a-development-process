@@ -1,0 +1,102 @@
+machine m0_SoftwareAndBranchesMachine
+
+sees c0_SoftwareAndBranchesContext
+
+variables
+	users
+	branches
+	branchSoftware
+	branchMajor
+	branchMinor
+	branchPatch
+
+invariants
+	@typeof-branches: branches ⊆ BRANCHES
+	@typeof-branchSoftware: branchSoftware ∈ branches → SOFTWARE
+	@typeof-branchMajor: branchMajor ∈ branches → ℕ
+	@typeof-branchMinor: branchMinor ∈ branches → ℕ
+	@typeof-branchPatch: branchPatch ∈ branches → ℕ
+	@typeof-users: users ⊆ USERS
+	
+
+	event INITIALISATION
+	then
+		@init-users: users ≔ ∅
+		@init-branches: branches ≔ ∅
+		@init-major: branchMajor ≔ ∅
+		@init-minor: branchMinor ≔ ∅
+		@init-patch: branchPatch ≔ ∅
+		@init-software: branchSoftware ≔ ∅
+	end
+	
+	event CreateBranch
+	any b s mj mn p where
+		@there-is-no-such-branch: b ∉ BRANCHES ∖ branches
+		@typeof-s: s ∈ SOFTWARE
+		@typeof-mj: mj ∈ ℕ
+		@typeof-mn: mn ∈ ℕ
+		@typeof-p: p ∈ ℕ
+	then
+		@upd-branches: branches ≔ branches ∪ {b}
+		@upd-branchSoftware: branchSoftware(b) ≔ s
+		@upd-branchMajor: branchMajor(b) ≔ mj
+		@upd-branchMinor: branchMinor(b) ≔ mn
+		@upd-branchPatch: branchPatch(b) ≔ p
+	end
+	
+	event UpdateChangesPatch
+		any b mj mn p s where
+			@there-is-such-branch: b ∈ branches
+			@typeof-s: s ∈ SOFTWARE
+			@major-compatibility: mj = branchMajor(b)
+			@minor-compatibility: mn = branchMinor(b)
+			@p-is-number: p ∈ ℕ
+			@newer-patch: p > branchPatch(b)
+		then
+			@upd-branchSoftware: branchSoftware(b) ≔ s
+			@upd-patch: branchPatch(b) ≔ p
+	end	
+	
+	event UpdateChangesMinor
+		any b mj mn s where
+			@there-is-such-branch: b ∈ branches
+			@typeof-s: s ∈ SOFTWARE
+			@major-compatibility: mj = branchMajor(b)
+			@mn-is-number: mn ∈ ℕ
+			@newer-minor: mn > branchMinor(b)
+		then
+			@upd-branchSoftware: branchSoftware(b) ≔ s
+			@upd-minor: branchMinor(b) ≔ mn
+			@upd-patch: branchPatch(b) ≔ 0
+	end	
+	
+	event UpdateChangesMajor
+		any b mj s where
+			@there-is-such-branch: b ∈ branches
+			@typeof-s: s ∈ SOFTWARE
+			@mn-is-number: mj ∈ ℕ
+			@newer-major: mj > branchMajor(b)
+		then
+			@upd-branchSoftware: branchSoftware(b) ≔ s
+			@upd-major: branchMajor(b) ≔ mj
+			@upd-minor: branchMinor(b) ≔ 0
+			@upd-patch: branchPatch(b) ≔ 0
+	end	
+	
+	event RemoveRepo
+	any b where
+		@typeof-b: b ∈ branches
+	then
+		@remove-branch: branches ≔ branches ∖ {b}
+		@remove-major: branchMajor ≔ {b} ⩤ branchMajor
+		@remove-minor: branchMinor ≔ {b} ⩤ branchMinor
+		@remove-patch: branchPatch ≔ {b} ⩤ branchPatch
+		@remove-software: branchSoftware ≔ {b} ⩤ branchSoftware
+	end
+		
+		//commit to local updates version number
+		//push for fork
+		//merge for main
+		
+
+	
