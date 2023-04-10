@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="INITIALISATION/users-forks/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="REPOSITORIES,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(REPOSITORIES×USERS))∈(∅ ⦂ ℙ(REPOSITORIES)) → (∅ ⦂ ℙ(USERS))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/users-local/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="REPOSITORIES,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(REPOSITORIES×USERS))∈(∅ ⦂ ℙ(REPOSITORIES)) → (∅ ⦂ ℙ(USERS))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/admins/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS))⊆(∅ ⦂ ℙ(USERS))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="CreateFork/users-forks/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17" org.eventb.core.prSets="BRANCHES,REPOSITORIES,SOFTWARE,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(repositories,localRepositories,remoteRepositories))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18,p19"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p18,p19"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(remoteRepositories,forks,main))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20,p21"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p20,p21"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p22"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p24"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p25"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p26"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with repositories=localRepositories∪remoteRepositories" org.eventb.core.prHyps="p18">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p1" org.eventb.core.prInfHyps="p27"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p1"/>
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with remoteRepositories=forks∪main" org.eventb.core.prHyps="p20">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p18" org.eventb.core.prInfHyps="p28"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p19" org.eventb.core.prInfHyps="p29"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p27" org.eventb.core.prInfHyps="p30"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p18,p19,p27"/>
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p8,p11,p7,p3,p16,p13,p14,p12,p9,p6,p5,p1,p4,p18,p19,p20,p21,p22,p27,p28,p29,p30">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="b" org.eventb.core.type="BRANCHES"/>
+        <org.eventb.core.prIdent name="branchMajor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchMinor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchPatch" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchSoftware" org.eventb.core.type="ℙ(BRANCHES×SOFTWARE)"/>
+        <org.eventb.core.prIdent name="branches" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="forks" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="localRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="main" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="mj" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="mn" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="r" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="remote" org.eventb.core.type="ℙ(REPOSITORIES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="remoteRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="usersToForks" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prIdent name="usersToLocal" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="r∈REPOSITORIES ∖ repositories"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∈users"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="forks∩main=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="¬b∈branches"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="mn∈ℕ"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="branches⊆BRANCHES"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="branchMajor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="mj∈ℕ"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="usersToForks{r ↦ u}∈forks∪{r} → users"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="usersToForks∈forks → users"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="dom(remote)=localRepositories"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="partition(repositories,localRepositories,remoteRepositories)"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="r∈REPOSITORIES ∖ (localRepositories∪forks∪main)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="branchSoftware∈branches → SOFTWARE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="remote∈localRepositories ↔ remoteRepositories"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="p∈ℕ"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="localRepositories∩remoteRepositories=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="s∈SOFTWARE">
+            <org.eventb.core.prIdent name="s" org.eventb.core.type="SOFTWARE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="branchPatch∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="b∉branches"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="remoteRepositories=forks∪main"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="branchMinor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="localRepositories∩(forks∪main)=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="admins⊆users"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="repositories=localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="users⊆USERS"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="usersToLocal∈localRepositories → users"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="repositories⊆REPOSITORIES"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(remoteRepositories,forks,main)"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="r∈REPOSITORIES ∖ (localRepositories∪remoteRepositories)"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="repositories=localRepositories∪forks∪main"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="RemoveLocalRepo/users-local/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="BRANCHES,REPOSITORIES,SOFTWARE,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(repositories,localRepositories,remoteRepositories))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15,p16"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p15,p16"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(remoteRepositories,forks,main))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17,p18"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p17,p18"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with repositories=localRepositories∪remoteRepositories" org.eventb.core.prHyps="p15">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p5"/>
+                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with remoteRepositories=forks∪main" org.eventb.core.prHyps="p17">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p23"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p24"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p22" org.eventb.core.prInfHyps="p25"/>
+                                                <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p15,p16,p22"/>
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p4,p6,p3,p2,p12,p9,p10,p7,p8,p5,p13,p15,p16,p17,p18,p22,p23,p24,p25">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="branchMajor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchMinor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchPatch" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchSoftware" org.eventb.core.type="ℙ(BRANCHES×SOFTWARE)"/>
+        <org.eventb.core.prIdent name="branches" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="bs" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="forks" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="localRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="main" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="r" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="remote" org.eventb.core.type="ℙ(REPOSITORIES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="remoteRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="usersToForks" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prIdent name="usersToLocal" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="forks∩main=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="branches⊆BRANCHES"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="branchMajor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="{r} ⩤ usersToLocal∈localRepositories ∖ {r} → users"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="usersToForks∈forks → users"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="dom(remote)=localRepositories"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="partition(repositories,localRepositories,remoteRepositories)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="branchSoftware∈branches → SOFTWARE"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="remote∈localRepositories ↔ remoteRepositories"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="r∈localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="localRepositories∩remoteRepositories=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="branchPatch∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="r∈localRepositories∪forks∪main"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="r∈repositories"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="remoteRepositories=forks∪main"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="branchMinor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="localRepositories∩(forks∪main)=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="admins⊆users"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="repositories=localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="bs⊆branches"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="users⊆USERS"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="usersToLocal∈localRepositories → users"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="repositories⊆REPOSITORIES"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(remoteRepositories,forks,main)"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="r∈localRepositories"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="repositories=localRepositories∪forks∪main"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="DeleteFork/users-forks/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16" org.eventb.core.prSets="BRANCHES,REPOSITORIES,SOFTWARE,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(repositories,localRepositories,remoteRepositories))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17,p18"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p17,p18"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(remoteRepositories,forks,main))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19,p20"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p19,p20"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p21"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p22"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p23"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with bs=repoBranches∼[{r}]" org.eventb.core.prHyps="p3">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p11" org.eventb.core.prInfHyps="p24"/>
+                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p11"/>
+                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with repositories=localRepositories∪remoteRepositories" org.eventb.core.prHyps="p17">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p7" org.eventb.core.prInfHyps="p25"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p7"/>
+                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with remoteRepositories=forks∪main" org.eventb.core.prHyps="p19">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p26"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p27"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p18" org.eventb.core.prInfHyps="p28"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p25" org.eventb.core.prInfHyps="p29"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p6,p17,p18,p25"/>
+                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p4,p8,p2,p10,p5,p13,p14,p9,p11,p7,p3,p6,p12,p17,p18,p19,p20,p24,p25,p26,p27,p28,p29">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="branchMajor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchMinor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchPatch" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchSoftware" org.eventb.core.type="ℙ(BRANCHES×SOFTWARE)"/>
+        <org.eventb.core.prIdent name="branches" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="bs" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="forks" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="localRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="main" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="r" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="remote" org.eventb.core.type="ℙ(REPOSITORIES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="remoteRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repoBranches" org.eventb.core.type="ℙ(BRANCHES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="usersToForks" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prIdent name="usersToLocal" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="forks∩main=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="{r} ⩤ usersToForks∈forks ∖ {r} → users"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="branches⊆BRANCHES"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="branchMajor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="remote∈localRepositories → remoteRepositories"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="r∈remoteRepositories"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="r∈forks"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="usersToForks∈forks → users"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="partition(repositories,localRepositories,remoteRepositories)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="branchSoftware∈branches → SOFTWARE"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="r∈localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="r∈forks∪main"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="localRepositories∩remoteRepositories=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="branchPatch∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="bs=repoBranches∼[{r}]"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="r∈localRepositories∪forks∪main"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="r∈repositories"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="remoteRepositories=forks∪main"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="branchMinor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="localRepositories∩(forks∪main)=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="admins⊆users"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="repoBranches∈branches ↠ repositories"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="repositories=localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="repoBranches∼[{r}]⊆branches"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="bs⊆branches"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="users⊆USERS"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="usersToLocal∈localRepositories → users"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="repositories⊆REPOSITORIES"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(remoteRepositories,forks,main)"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="repositories=localRepositories∪forks∪main"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/every-fork-has&#10;&#9;@admins/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊥"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS))⊂(∅ ⦂ ℙ(USERS))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="RemoveLocalRepo/users-forks/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="BRANCHES,REPOSITORIES,SOFTWARE,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(repositories,localRepositories,remoteRepositories))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16,p17"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16,p17"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(remoteRepositories,forks,main))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18,p19"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p18,p19"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p20"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p21"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p22"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with bs=repoBranches∼[{r}]" org.eventb.core.prHyps="p3">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p10"/>
+                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with repositories=localRepositories∪remoteRepositories" org.eventb.core.prHyps="p16">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p24"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p6"/>
+                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with remoteRepositories=forks∪main" org.eventb.core.prHyps="p18">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p25"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p26"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p24" org.eventb.core.prInfHyps="p27"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p16,p17,p24"/>
+                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p4,p7,p2,p9,p5,p11,p12,p8,p10,p6,p3,p14,p16,p17,p18,p19,p23,p24,p25,p26,p27">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="branchMajor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchMinor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchPatch" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchSoftware" org.eventb.core.type="ℙ(BRANCHES×SOFTWARE)"/>
+        <org.eventb.core.prIdent name="branches" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="bs" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="forks" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="localRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="main" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="r" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="remote" org.eventb.core.type="ℙ(REPOSITORIES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="remoteRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repoBranches" org.eventb.core.type="ℙ(BRANCHES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="usersToForks" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prIdent name="usersToLocal" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="forks∩main=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="branches⊆BRANCHES"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="branchMajor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="remote∈localRepositories → remoteRepositories"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="usersToForks∈forks → users"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="{r} ⩤ usersToForks∈forks → users"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(repositories,localRepositories,remoteRepositories)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="branchSoftware∈branches → SOFTWARE"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="r∈localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="localRepositories∩remoteRepositories=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="branchPatch∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="bs=repoBranches∼[{r}]"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="r∈localRepositories∪forks∪main"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="r∈repositories"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="remoteRepositories=forks∪main"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="branchMinor∈branches → ℕ"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="admins⊂users"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="localRepositories∩(forks∪main)=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="repoBranches∈branches ↠ repositories"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="repositories=localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="repoBranches∼[{r}]⊆branches"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="bs⊆branches"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="users⊆USERS"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="usersToLocal∈localRepositories → users"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="repositories⊆REPOSITORIES"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(remoteRepositories,forks,main)"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="r∈localRepositories"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="repositories=localRepositories∪forks∪main"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="CreateLocalRepo/users-local/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16" org.eventb.core.prSets="BRANCHES,REPOSITORIES,SOFTWARE,USERS">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(repositories,localRepositories,remoteRepositories))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17,p18"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p17,p18"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(remoteRepositories,forks,main))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19,p20"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p19,p20"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p24"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p25"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with repoBranches(rb)=rm" org.eventb.core.prHyps="p14">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p26"/>
+                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p8"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with mj=branchMajor(rb)" org.eventb.core.prHyps="p1">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p27"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p9"/>
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with mn=branchMinor(rb)" org.eventb.core.prHyps="p7">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p28"/>
+                                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p6"/>
+                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with p=branchPatch(rb)" org.eventb.core.prHyps="p3">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p29"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p5"/>
+                                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with repositories=localRepositories∪remoteRepositories" org.eventb.core.prHyps="p17">
+                                                                            <org.eventb.core.prAnte name="'">
+                                                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p30"/>
+                                                                                <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p2"/>
+                                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with remoteRepositories=forks∪main" org.eventb.core.prHyps="p19">
+                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p31"/>
+                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p18" org.eventb.core.prInfHyps="p32"/>
+                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p26" org.eventb.core.prInfHyps="p33"/>
+                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p30" org.eventb.core.prInfHyps="p34"/>
+                                                                                        <org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p17,p18,p26,p30"/>
+                                                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p13,p12,p14,p11,p1,p7,p3,p4,p19,p20,p21,p27,p28,p29,p31,p32,p33,p34">
+                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="b" org.eventb.core.type="BRANCHES"/>
+        <org.eventb.core.prIdent name="branchMajor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchMinor" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchPatch" org.eventb.core.type="ℙ(BRANCHES×ℤ)"/>
+        <org.eventb.core.prIdent name="branchSoftware" org.eventb.core.type="ℙ(BRANCHES×SOFTWARE)"/>
+        <org.eventb.core.prIdent name="branches" org.eventb.core.type="ℙ(BRANCHES)"/>
+        <org.eventb.core.prIdent name="forks" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="localRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="main" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="mj" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="mn" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="r" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="rb" org.eventb.core.type="BRANCHES"/>
+        <org.eventb.core.prIdent name="remoteRepositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repoBranches" org.eventb.core.type="ℙ(BRANCHES×REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="repositories" org.eventb.core.type="ℙ(REPOSITORIES)"/>
+        <org.eventb.core.prIdent name="rm" org.eventb.core.type="REPOSITORIES"/>
+        <org.eventb.core.prIdent name="s" org.eventb.core.type="SOFTWARE"/>
+        <org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+        <org.eventb.core.prIdent name="users" org.eventb.core.type="ℙ(USERS)"/>
+        <org.eventb.core.prIdent name="usersToLocal" org.eventb.core.type="ℙ(REPOSITORIES×USERS)"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="branchMinor(rb)∈ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="r∈REPOSITORIES ∖ repositories"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∈users"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="forks∩main=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬b∈branches"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="mn∈ℕ"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="branches⊆BRANCHES"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="mn=branchMinor(rb)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="rm∈remoteRepositories"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="mj∈ℕ"/>
+        <org.eventb.core.prPred name="p33" org.eventb.core.predicate="repoBranches(rb)∈forks∪main"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="s=branchSoftware(rb)"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="repoBranches(rb)=rm"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="partition(repositories,localRepositories,remoteRepositories)"/>
+        <org.eventb.core.prPred name="p34" org.eventb.core.predicate="r∈REPOSITORIES ∖ (localRepositories∪forks∪main)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="mj=branchMajor(rb)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="p=branchPatch(rb)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="p∈ℕ"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="localRepositories∩remoteRepositories=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="usersToLocal{r ↦ u}∈localRepositories∪{r} → users"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="s∈SOFTWARE"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="b∉branches"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="branchPatch(rb)∈ℕ"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="remoteRepositories=forks∪main"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="localRepositories∩(forks∪main)=(∅ ⦂ ℙ(REPOSITORIES))"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="repoBranches(rb)∈remoteRepositories"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="rb∈branches"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="repositories=localRepositories∪remoteRepositories"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="branchMajor(rb)∈ℕ"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="users⊆USERS"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="usersToLocal∈localRepositories → users"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="repositories⊆REPOSITORIES"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(remoteRepositories,forks,main)"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="r∈REPOSITORIES ∖ (localRepositories∪remoteRepositories)"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="repositories=localRepositories∪forks∪main"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>
