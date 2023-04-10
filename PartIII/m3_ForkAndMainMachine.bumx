@@ -1,0 +1,123 @@
+machine m3_ForkAndMainMachine
+refines m2_LocalAndRemoteMachine
+sees c3_ForkAndMainContext
+variables
+	// New variables in m0
+	branches
+	branchSoftware
+	branchMajor
+	branchMinor
+	branchPatch
+	variables
+	// New variables in m1
+	repositories
+	repoBranches
+	repoSoftware
+	variables
+	// New variables in m2
+	localRepositories
+	remoteRepositories
+	remote
+	variables
+	// New variables in m3
+	forks
+	main
+	
+invariants
+	@fork-main: partition(remoteRepositories, forks, main) //how to specify there is only one main
+
+	event INITIALISATION
+	extends INITIALISATION
+	then
+		@init-forks: forks ≔ ∅
+		@init-main: main ≔ ∅
+	end
+	
+	event CreateBranch
+	extends CreateBranch
+	end
+	
+	event CommitChangesPatch
+	extends CommitChangesPatch
+	end	
+	
+	event CommitChangesMinor
+	extends CommitChangesMinor
+	end	
+	
+	event CommitChangesMajor
+	extends CommitChangesMajor
+	end	
+	
+	event PushChangesPatch
+	extends UpdateChangesPatch
+	where
+		@is-fork: repoBranches(b) ∈ forks
+	end	
+	
+	event PushChangesMinor
+	extends UpdateChangesMinor
+	where
+		@is-fork: repoBranches(b) ∈ forks
+	end	
+	
+	event PushChangesMajor
+	extends UpdateChangesMajor
+	where
+		@is-fork: repoBranches(b) ∈ forks
+	end	
+	
+	event MergeChangesPatch
+	extends UpdateChangesPatch
+	where
+		@is-main: repoBranches(b) ∈ main
+	end	
+	
+	event MergeChangeMinor
+	extends UpdateChangesMinor
+	where
+		@is-main: repoBranches(b) ∈ main
+	end	
+	
+	event MergeChangesMajor
+	extends UpdateChangesMajor
+	where
+		@is-main: repoBranches(b) ∈ main
+	end	
+	
+	event CreateLocalRepo
+	extends CloneLocalRepo
+	end
+	
+	event CreateFork
+	extends CreateRemoteRepo
+		then
+		@create-fork:  forks ≔  forks ∪ {r}
+	end
+	
+	event RemoveLocalRepo
+	extends RemoveLocalRepo
+	end
+	
+	event RemoveBranch
+	extends RemoveBranch
+	end
+	
+//	event DeleteFork
+//	extends RemoveRemotelRepo
+//	where
+//		@is-fork: r ∈ forks
+//	then
+//		@delete-fork: forks ≔  forks ∖ {r}
+//	end
+	//cant delete main
+	
+
+		
+		
+		
+		
+		
+		
+		
+		
