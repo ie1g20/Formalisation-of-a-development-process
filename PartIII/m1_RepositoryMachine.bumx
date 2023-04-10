@@ -1,0 +1,103 @@
+machine m1_RepositoryMachine
+refines m0_SoftwareAndBranchesMachine
+sees c1_RepositoryContext
+variables
+	// Variables from m0
+	branches
+	branchSoftware
+	branchMajor
+	branchMinor
+	branchPatch
+variables
+	// New variables in m1
+	repositories
+	repoBranches
+	repoSoftware
+invariants
+	@typeof-repo: repositories ⊆ REPOSITORIES
+	// A repository always have at least one branch
+	@typeof-repoBranches: repoBranches ∈ branches  ↠ repositories //represents the branches of each repository
+	@typeof-repoSoftware: repoSoftware ∈ repositories → SOFTWARE
+	@same-softawre: ∀b · b ∈ branches ⇒ branchSoftware(b) = repoSoftware(repoBranches(b))
+	// Add an invariant saying that every branches in a repository has the same software.
+	event INITIALISATION
+	extends INITIALISATION
+		then
+			@init-repository: repositories ≔ ∅
+			@init-repoBranches: repoBranches ≔ ∅
+			@init-repoSoftware: repoSoftware ≔ ∅
+		end
+	
+	event CreateBranch
+	extends CreateBranch
+		any r where
+			@typeof-r: r ∈ repositories
+			@soft-compatibility: s = repoSoftware(r)
+	//		@repo-has-no-such-branch: repoBranches(b) ≠ r
+		then
+			@assign-repo: repoBranches(b) ≔ r
+	end
+	
+	event UpdateChangesPatch
+	extends UpdateChangesPatch
+	where
+		@soft-copatibility: s = branchSoftware(b)
+	end	
+	
+	event UpdateChangesMinor
+	extends UpdateChangesMinor
+	where
+		@soft-copatibility: s = branchSoftware(b)
+	end	
+	
+	event UpdateChangesMajor
+	extends UpdateChangesMajor
+	where
+		@soft-copatibility: s = branchSoftware(b)
+	end	
+	
+	event CreateRepo
+	extends CreateBranch
+	any r where
+		@typeof-r: r ∈ REPOSITORIES ∖ repositories
+	then
+		@create-repo: repositories ≔ repositories ∪ {r}
+		@main-branch: repoBranches(b) ≔ r
+		@repo-software: repoSoftware(r) ≔ s
+	end
+	
+	event RemoveBranch extends RemoveBranch
+	any r
+	where
+		@typeof-r: r ∈ repositories	
+		@other-repos: (repoBranches∼[{r}]) ∖ {b} ≠ ∅ 
+		@branch-repo: repoBranches(b) = r
+	// FIXME
+	then
+		@remove-from-repo: repoBranches ≔ {b} ⩤ repoBranches  
+	end
+	
+	event RemoveRepo
+	extends RemoveBranches
+	any r where
+		@typeof-r: r ∈ repositories
+		@branch-repo: bs = repoBranches∼[{r}]
+	then
+		@remove-repo: repositories ≔ repositories ∖ {r}
+		@remove-repository: repoBranches ≔ bs ⩤ repoBranches  //ask repoBranches ⩥ {r] didnt work
+		@remove-repoSoft: repoSoftware ≔ {r} ⩤ repoSoftware
+		
+	end
+	//event RemoveRepo
+	
+	//next remote and local; empty remote
+	
+
+		
+		
+		
+		
+		
+		
+		
+		
