@@ -3,7 +3,6 @@ machine m0_SoftwareAndBranchesMachine
 sees c0_SoftwareAndBranchesContext
 
 variables
-	users
 	branches
 	branchSoftware
 	branchMajor
@@ -16,12 +15,10 @@ invariants
 	@typeof-branchMajor: branchMajor ∈ branches → ℕ
 	@typeof-branchMinor: branchMinor ∈ branches → ℕ
 	@typeof-branchPatch: branchPatch ∈ branches → ℕ
-	@typeof-users: users ⊆ USERS
 	
 
 	event INITIALISATION
 	then
-		@init-users: users ≔ ∅
 		@init-branches: branches ≔ ∅
 		@init-major: branchMajor ≔ ∅
 		@init-minor: branchMinor ≔ ∅
@@ -31,7 +28,7 @@ invariants
 	
 	event CreateBranch
 	any b s mj mn p where
-		@there-is-no-such-branch: b ∉ BRANCHES ∖ branches
+		@there-is-no-such-branch: b ∉ branches
 		@typeof-s: s ∈ SOFTWARE
 		@typeof-mj: mj ∈ ℕ
 		@typeof-mn: mn ∈ ℕ
@@ -83,7 +80,7 @@ invariants
 			@upd-patch: branchPatch(b) ≔ 0
 	end	
 	
-	event RemoveRepo
+	event RemoveBranch
 	any b where
 		@typeof-b: b ∈ branches
 	then
@@ -94,6 +91,17 @@ invariants
 		@remove-software: branchSoftware ≔ {b} ⩤ branchSoftware
 	end
 		
+	event RemoveBranches
+	any bs where
+		@typeof-b: bs ⊆ branches
+	then
+		@remove-branch: branches ≔ branches ∖ bs
+		@remove-major: branchMajor ≔ bs ⩤ branchMajor
+		@remove-minor: branchMinor ≔ bs ⩤ branchMinor
+		@remove-patch: branchPatch ≔ bs ⩤ branchPatch
+		@remove-software: branchSoftware ≔ bs ⩤ branchSoftware
+	end
+	
 		//commit to local updates version number
 		//push for fork
 		//merge for main
