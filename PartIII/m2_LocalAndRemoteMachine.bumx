@@ -82,7 +82,7 @@ invariants
 		// TODO other definitions
 	then
 		@create-local-repo:  localRepositories ≔  localRepositories ∪ {r}		
-		@remove-link: remote(r) ≔ rm //fixed
+		@remote-link: remote(r) ≔ rm //fixed
 	end
 	
 	event CreateRemoteRepo
