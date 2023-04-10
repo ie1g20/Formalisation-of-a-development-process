@@ -22,15 +22,18 @@ variables
 	// New variables in m3
 	forks
 	main
+	upstream
 	
 invariants
 	@fork-main: partition(remoteRepositories, forks, main) //how to specify there is only one main
+	@upstream: upstream ∈ forks → remoteRepositories
 
 	event INITIALISATION
 	extends INITIALISATION
 	then
 		@init-forks: forks ≔ ∅
 		@init-main: main ≔ ∅
+		@init-upstream: upstream ≔ ∅
 	end
 	
 	event CreateBranch
@@ -91,8 +94,18 @@ invariants
 	
 	event CreateFork
 	extends CreateRemoteRepo
+	any f rb
+	where
+		@fork: f ∈ forks
+		@rb-is-remote: rb ∈ branches
+		@rb-is-branch: repoBranches(rb) = f
+		@s-def: s = branchSoftware(rb)
+		@mf-def: mj = branchMajor(rb)
+		@mn-def: mn = branchMinor(rb)
+		@p-def: p = branchPatch(rb)
 		then
 		@create-fork:  forks ≔  forks ∪ {r}
+		@fork-main: upstream(r) ≔ f
 	end
 	
 	event RemoveLocalRepo
