@@ -1,0 +1,6 @@
+context c5_Release
+extends c0_SoftwareAndBranchesContext
+sets 
+	RELEASES
+
+end
