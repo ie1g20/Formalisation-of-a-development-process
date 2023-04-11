@@ -48,7 +48,7 @@ invariants
 	extends CreateBranch
 	any u 
 	where
-		@user: usersToForks(repoBranches(b)) = u 
+		@user: u ∈ users
 	end
 	
 	event CommitChangesPatch
@@ -76,21 +76,21 @@ invariants
 	extends PushChangesPatch
 	any u 
 	where
-		@user: usersToLocal(repoBranches(b)) = u
+		@user: usersToForks(repoBranches(b)) = u
 	end	
 	
 	event PushChangesMinor
 	extends PushChangesMinor
 	any u 
 	where
-		@user: usersToLocal(repoBranches(b)) = u
+		@user: usersToForks(repoBranches(b)) = u
 	end	
 	
 	event PushChangesMajor
 	extends PushChangesMajor
 	any u 
 	where
-		@user: usersToLocal(repoBranches(b)) = u
+		@user: usersToForks(repoBranches(b)) = u
 	end	
 	
 	event MergeChangesPatch
