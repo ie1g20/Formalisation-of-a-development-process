@@ -41,19 +41,19 @@ invariants
 	event UpdateChangesPatch
 	extends UpdateChangesPatch
 	where
-		@soft-copatibility: s = branchSoftware(b)
+		@soft-copatibility: s = repoSoftware(repoBranches(b))
 	end	
 	
 	event UpdateChangesMinor
 	extends UpdateChangesMinor
 	where
-		@soft-copatibility: s = branchSoftware(b)
+		@soft-copatibility: s = repoSoftware(repoBranches(b))
 	end	
 	
 	event UpdateChangesMajor
 	extends UpdateChangesMajor
 	where
-		@soft-copatibility: s = branchSoftware(b)
+		@soft-copatibility: s = repoSoftware(repoBranches(b))
 	end	
 	
 	event CreateRepo

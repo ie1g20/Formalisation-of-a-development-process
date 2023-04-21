@@ -1,0 +1,166 @@
+machine m5_ReleaseMachine
+refines m4_UserMachine
+sees c5_ReleaseContext
+variables
+	// New variables in m0
+	branches
+	branchSoftware
+	branchMajor
+	branchMinor
+	branchPatch
+	variables
+	// New variables in m1
+	repositories
+	repoBranches
+	repoSoftware
+	variables
+	// New variables in m2
+	localRepositories
+	remoteRepositories
+	remote
+	variables
+	// New variables in m3
+	forks
+	main
+	upstream
+	variables
+	// New variables in m4
+	users
+	admins
+	usersToForks
+	usersToLocal
+	variables
+	dependency
+	released
+	features
+	version
+invariants
+	
+	@typeof-version: version ∈ ℕ ↔ ℕ
+	//all different version of software
+	@typeof-features: features ∈ SOFTWARE ↔ version
+	@typeof-dependency: dependency ∈ features → features
+	//the already released software
+	@typeof-released: released ∈ SOFTWARE ↔ version
+	event INITIALISATION
+	extends INITIALISATION
+	then
+		@init-dependency: dependency ≔ ∅
+		@init-feature: features ≔ ∅
+		@init-released: released ≔ ∅
+		@init-version: version ≔ ∅
+	end
+	
+	event CreateBranch
+	extends CreateBranch
+	end
+	
+	event CommitChangesPatch
+	extends CommitChangesPatch
+	end	
+	
+	event CommitChangesMinor
+	extends CommitChangesMinor
+	end	
+	
+	event CommitChangesMajor
+	extends CommitChangesMajor
+	end	
+	
+	event PushChangesPatch
+	extends PushChangesPatch
+	end	
+	
+	event PushChangesMinor
+	extends PushChangesMinor
+	end	
+	
+	event PushChangesMajor
+	extends PushChangesMajor
+	end	
+	
+	event MergeChangesPatch
+	extends MergeChangesPatch
+	end	
+	
+	event MergeChangeMinor
+	extends MergeChangeMinor
+	any fs  v 
+	where
+		@grd1: fs ⊆ features
+		@grd3: mj ∈ ℕ
+		@grd2: mn = branchMinor(b) + 1
+		@grd4: v = mj ↦ mn
+	then
+		@create-version: version ≔ version ∪ {mj ↦ mn}
+		@create-feature: features ≔ features ∪ {s ↦ (mj ↦ mn)}
+		//if the minor is changed no dependencies should be altered as it is backward-compatible
+	end	
+	
+	event MergeChangesMajor
+	extends MergeChangesMajor
+	any fs 
+	where
+		@grd1: fs ⊆ features
+		@grd2: mj = branchMajor(b) + 1
+	then
+		@create-version: version ≔ version ∪ {mj ↦ 0}
+		@create-feature: features ≔ features ∪ {s ↦ (mj ↦ 0)}
+		@add-dependencies: dependency ≔ dependency ∪ ({s ↦ (mj ↦ 0)} × fs)
+	end	
+	
+	event CreateReleaseMajor
+	any f v s b mj
+	where
+		@grd0: b ∈ branches
+		@grd1: f ∈ features
+		@grd2: dependency(f) ∈ features
+		@grd3: v ∈ version
+		@grd4: s ∈ dom(features)
+		@grd5: mj = branchMajor(b) + 1
+	then
+		@release: released(s) ≔ v
+	end	
+	
+	event CreateReleaseMinor
+	any f v s b mn
+	where
+		@grd0: b ∈ branches
+		@grd1: f ∈ features
+		@grd2: dependency(f) ∈ features
+		@grd3: v ∈ version
+		@grd4: s ∈ dom(features)
+		@grd5: mn = branchMinor(b) + 1
+	then
+		@release: released ≔ released ∪ {s ↦ v}
+	end	
+	
+	
+	event CreateLocalRepo
+	extends CreateLocalRepo
+	end
+	
+	event CreateFork
+	extends CreateFork
+	end
+	
+	event RemoveLocalRepo
+	extends RemoveLocalRepo
+	end
+	
+	event RemoveBranch
+	extends RemoveBranch
+	end
+	
+
+	
+
+	
+
+		
+		
+		
+		
+		
+		
+		

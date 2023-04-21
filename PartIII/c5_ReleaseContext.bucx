@@ -1,5 +1,5 @@
 context c5_Release
-extends c0_SoftwareAndBranchesContext
+extends c4_UserContext
 sets 
 	RELEASES
 
